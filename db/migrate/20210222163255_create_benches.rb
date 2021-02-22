@@ -5,7 +5,7 @@ class CreateBenches < ActiveRecord::Migration[6.1]
       t.string :location
       t.string :city
       t.integer :score
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ lower_case_user = User.create!(first_name: "Peter", last_name: "Griffin", email: "griffin@gmail.com", password: "monkeys123")  
+ lower_case_bench = Bench.create!( name: "buttcomfort", location: "buttland", user: lower_case_user)
