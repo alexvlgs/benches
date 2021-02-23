@@ -1,0 +1,25 @@
+.list {
+  margin: 1rem auto;
+  margin-block-start: 0;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  list-style: none;
+  }
+
+  & li {
+    @media (min-width: 769px){
+      padding: 1rem;
+    }
+  }
+
+  & a {
+    color: $gray;
+    font-size: 1.5rem;
+    &:hover {
+      color: $action;
+    }
+  }
+}

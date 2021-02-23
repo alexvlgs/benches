@@ -1,0 +1,11 @@
+<div class="container">
+<h1>All the best benches for the comfort of your butt</h1>
+	<ul class="list">
+		<% @benches.each do |bench| %>
+			<li>
+				<%= link_to bench.name.capitalize, bench_path(bench)%>
+			</li>
+		<% end %>
+	</ul>
+	<%= link_to "Create a new bench!", new_bench_path, class: 'btn-outline' %>
+</div>

@@ -1,0 +1,11 @@
+.container {
+  width: 100vw;
+  padding: 2rem;
+  @media (min-width: 769px) {
+    width: 70vw;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: $white;
+
+  }
+}

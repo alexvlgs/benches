@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper" style="background-image: url('<%= image_path "bg.jpg" %>')">
+  <div class="wrapper-content">
+    <p>Welcome to:</p>
+    <h1>Rent a Bench!</h1>
+    <% if user_signed_in? %>
+      <p> Welcome <%= current_user.email %>! You are logged in.</p>
+      <div class="action">
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn' %>
+      </div>
+    <% else %>
+      <p>Please login to checkout the best sposts!<br>
+      Are you new? Create an account!</p>
+    <div class="action">
+      <%= link_to 'login', new_user_session_path, class: 'btn' %>
+      <%= link_to 'signup', new_user_session_path, class: 'btn-outline' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
