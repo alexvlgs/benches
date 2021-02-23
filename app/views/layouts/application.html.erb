@@ -13,8 +13,15 @@
   </head>
 
   <body>
+    <%= yield %>
+    <footer>
+      <h2>- Rent a bench -</h2>
+      <svg height="3" width="100">
+        <line x1="0" y1="0" x2="100" y2="0"/>
+      </svg>
+      <p>Made by <span>Fabio, Alexandre & Susanna</span></p>
+    </footer>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
   </body>
 </html>

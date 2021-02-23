@@ -1,0 +1,40 @@
+.btn {
+  color: $white;
+  background-color: $action;
+  opacity: 0.8;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+    opacity: 1;
+
+  }
+}
+
+.btn-outline {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-decoration:none;
+  color: $action;
+  border-radius: 50px;
+  border: 1px solid $action;
+  padding: 0.75rem 1rem;
+  // padding: 0.25rem 0.75rem;
+
+  &:hover {
+  color: $action;
+    text-decoration: underline;
+  }
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
