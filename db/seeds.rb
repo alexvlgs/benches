@@ -29,6 +29,3 @@ puts "creating 10 bookings"
 10.times do
   Booking.create(user: User.all.sample, bench: Bench.all.sample)
 end
-puts "done"
-
-puts "hi"
