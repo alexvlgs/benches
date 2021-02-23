@@ -3,13 +3,13 @@
     <% if user_signed_in? %>
     <li>
       <%= link_to 'Home', benches_path, class: "link" %>
-        <%#= image_tag 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png' %>
+        <%#= image_path 'bench.png' %>
       <%# end %>
     </li>
     <% else %>
     <li>
       <%= link_to 'Home', root_path, class: "link" %>
-        <%#= image_tag 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png' %>
+        <%#= image_path 'bench.png' %>
       <%# end %>
     </li>
     <% end %>
