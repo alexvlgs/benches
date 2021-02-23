@@ -1,6 +1,7 @@
 class BenchesController < ApplicationController
 	before_action :fetch_bench, only: [:show, :edit, :update, :destroy]
 
+
 	def index
 		@benches = Bench.all
 	end
@@ -35,7 +36,7 @@ class BenchesController < ApplicationController
 		redirect_to bench_path
 	end
 
-	private 
+	private
 
 	def fetch_bench
 		@bench = Bench.find(params[:id])
