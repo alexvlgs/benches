@@ -1,0 +1,13 @@
+<h1> ALL THE BEST BENCHES FOR THE COMFORT OF YOUR BUTT </h1>
+<div class="container">
+	<%= link_to "Create a new bench!", new_bench_path %>
+</div>
+<div class="container">
+	<ul>
+		<% @benches.each do |bench| %>
+			<li>
+				<%= link_to bench.name, bench_path(bench)%>
+			</li>
+		<% end %>
+	</ul>
+</div>
