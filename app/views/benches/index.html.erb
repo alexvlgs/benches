@@ -3,7 +3,8 @@
 	<ul class="list">
 		<% @benches.each do |bench| %>
 			<li>
-				<%= link_to bench.name.capitalize, bench_path(bench)%>
+				<%= link_to bench.name.capitalize, bench_path(bench), id: bench.id %>
+				<%= link_to 'book', new_bench_booking_path(bench), class: 'btn-outline' %>
 			</li>
 		<% end %>
 	</ul>
