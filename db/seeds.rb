@@ -30,3 +30,4 @@ puts "creating 10 bookings"
   Booking.create(user: User.all.sample, bench: Bench.all.sample)
 end
 puts "done"
+puts "hello"
