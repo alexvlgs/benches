@@ -1,47 +1,49 @@
 class BenchesController < ApplicationController
-	before_action :fetch_bench, only: [:show, :edit, :update, :destroy]
+  before_action :fetch_bench, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
-	def index
-		@benches = Bench.all
-	end
 
-	def show
-		@bench = Bench.find(params[:id])
-	end
+  def index
+    @benches = Bench.all
+  end
 
-	def new
-		@bench = Bench.new
-	end
+  def show
+    @bench = Bench.find(params[:id])
+  end
 
-	def create
-		@bench = Bench.new(benches_params)
-		if @bench.save
-			redirect_to bench_path(@bench)
-		else
-			render "new"
-		end
-	end
+  def new
+    @bench = Bench.new
+  end
 
-	def edit
-	end
+  def create
+    @bench = Bench.new(benches_params)
+    if @bench.save
+      redirect_to bench_path(@bench)
+    else
+      render "new"
+    end
+  end
 
-	def update
-		@bench.update(benches_params)
-		redirect_to bench_path(@bench)
-	end
+  def edit
+  end
 
-	def destroy
-		@bench.destroy
-		redirect_to bench_path
-	end
+  def update
+    @bench.update(benches_params)
+    redirect_to bench_path(@bench)
+  end
 
-	private 
+  def destroy
+    @bench.destroy
+    redirect_to bench_path
+  end
 
-	def fetch_bench
-		@bench = Bench.find(params[:id])
-	end
+  private
 
-	def benches_params
-		params.require(:bench).permit(:name, :location, :city, :score)
-	end
+  def fetch_bench
+    @bench = Bench.find(params[:id])
+  end
+
+  def benches_params
+    params.require(:bench).permit(:name, :location, :city, :score)
+  end
 end
