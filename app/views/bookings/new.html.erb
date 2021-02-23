@@ -1,17 +1,5 @@
 
 <div class="container">
     <h2>Bench: <%=@bench.name%>, location: <%=@bench.location%></h2>
-  	<%= simple_form_for [@bench, @booking] do |f| %>
-		<%= f.error_notification %>
-
-
-		<div class="form-inputs">
-			<%= f.input :starting_date, as: :datetime %>
-			<%= f.input :ending_date, as: :datetime %>
-		</div>
-
-		<div class="form-actions">
-			<%= f.button :submit %>
-		</div>
-	<% end %>
+    <%= render 'form' %>
 </div>

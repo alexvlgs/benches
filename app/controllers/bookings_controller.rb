@@ -10,11 +10,14 @@ class BookingsController < ApplicationController
   
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save
+    @booking.user = @user
+    @booking.save
+    raise
+
       redirect_to bench_path(@bench)
-    else
-      redirect_to new_bench_booking_path(@bench)
-    end
+    # else
+    #   redirect_to new_bench_booking_path(@bench)
+    # end
 
   end
 
@@ -35,6 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :ending_date, :bench_id, :user_id)
+    params.require(:booking).permit(:starting_date, :ending_date, :bench_id)
   end
 end
