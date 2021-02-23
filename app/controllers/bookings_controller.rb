@@ -11,14 +11,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = @user
-    @booking.save
-    raise
+    @booking.bench = @bench
 
+    if @booking.save
       redirect_to bench_path(@bench)
-    # else
-    #   redirect_to new_bench_booking_path(@bench)
-    # end
-
+    else
+      redirect_to new_bench_booking_path(@bench)
+    end
   end
 
   def update
