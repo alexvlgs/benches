@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   z-index: 3;
-  background-color: $lightred;
+  background-color: $white;
+  border-bottom: 1px solid $lightred;
   width: 100vw; 
   height: 3.5rem;
   padding: 1rem 10vw;
@@ -24,6 +25,11 @@
     align-items: center;
     margin: 0;
     padding: 0;
+  }
+  @media (min-width: 769px) {
+    background-color: $lightred;
+  border-bottom: 1px solid $action;
+
   }
 }
 
