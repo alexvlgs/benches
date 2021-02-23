@@ -7,11 +7,13 @@
   letter-spacing: 3px;
   font-weight: 600;
   padding: 0.75rem 1rem;
+  transition: opacity 0.3s ease-out;
+
   &:hover {
     color: $white;
     text-decoration: underline;
     opacity: 1;
-
+    transition: opacity 0.3s ease-out;
   }
 }
 
@@ -24,11 +26,14 @@
   border-radius: 50px;
   border: 1px solid $action;
   padding: 0.75rem 1rem;
-  // padding: 0.25rem 0.75rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-out;
 
   &:hover {
   color: $action;
     text-decoration: underline;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
   }
 }
 

@@ -10,6 +10,10 @@ footer {
     font-family: $headers-font;
     color: $action;
   }
+
+  & h2 {
+    margin: 0;
+  }
   // & .fab {
   //   color: $action;
   //   font-size: 1.5rem;
