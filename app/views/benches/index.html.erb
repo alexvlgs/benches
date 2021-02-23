@@ -1,11 +1,16 @@
 <div class="container">
 <h1>All the best benches for the comfort of your butt</h1>
-	<ul class="list">
+	<div class="content">
 		<% @benches.each do |bench| %>
-			<li>
-				<%= link_to bench.name.capitalize, bench_path(bench)%>
-			</li>
+			<div class="card">
+				<%= image_tag "bench placeholder.jpg"%>
+				<div class="card-content">
+					<%= link_to bench.name.capitalize, bench_path(bench)%>
+					<%= bench.location %>
+					<%= link_to "book", "#", class:"btn-outline" %>
+				</div>
+			</div>
 		<% end %>
-	</ul>
+	</div>
 	<%= link_to "Create a new bench!", new_bench_path, class: 'btn-outline' %>
 </div>
