@@ -8,6 +8,8 @@ class BenchesController < ApplicationController
 
   def show
     @bench = Bench.find(params[:id])
+    @reviews = @bench.reviews
+    @review = Review.new
   end
 
   def new

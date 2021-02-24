@@ -21,7 +21,7 @@ puts "done"
 
 puts "creating 10 benches"
 10.times do
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, location: Faker::Address.city)
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, location: Faker::Address.city, score: Faker::Number.within(range: 0..5))
 end
 puts "done"
 
