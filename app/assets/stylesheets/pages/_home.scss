@@ -17,14 +17,26 @@
   @media (min-width: 769px) {
     width: 50vw;
     margin: 3.5rem auto 0  auto;
-    background-position: 20% 45%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 3rem;
   }
+
   &-content {
     background-color: rgba(255,255,255,0.75);
     padding: 1rem;
     width: 100vw;
     @media (min-width: 769px) {
       width: 40vw;
+    }
+  }
+  & img {
+    height: 3rem;
+    margin-bottom: 1rem;
+    @media (min-width: 769px) {
+      height: 8rem;
+      margin: 1.5rem auto;
     }
   }
 }

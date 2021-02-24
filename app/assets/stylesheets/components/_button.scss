@@ -8,7 +8,8 @@
   font-weight: 600;
   padding: 0.75rem 1rem;
   transition: opacity 0.3s ease-out;
-
+  // height: 2rem;
+  
   &:hover {
     color: $white;
     text-decoration: underline;
@@ -18,6 +19,8 @@
 }
 
 .btn-outline {
+  // height: 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 600;
@@ -42,4 +45,31 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+
+.btn-small {
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-decoration:none;
+  color: $action;
+  // border-radius: 50px;
+  // border: 1px solid $action;
+  //padding: 0.5rem 0.75rem;
+  // padding: 0.25rem 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-out;
+  // height: 1.5rem;
+  // margin-bottom: 1rem;
+  text-align: center;
+  &:hover {
+    color: $action;
+    text-decoration: underline;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+  @media (min-width: 769px) {
+    font-weight: 400;
+    font-size: 1rem;
+  }
 }

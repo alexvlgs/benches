@@ -7,3 +7,14 @@
     width: 50%;
   }
 }
+
+.form {
+  height: 100%;
+  &-short {
+    height: 70vh;
+  }
+}
+
+.text-color {
+  color: $action;
+}

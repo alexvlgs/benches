@@ -4,11 +4,22 @@
 		<% @benches.each do |bench| %>
 
 			<div class="card">
+      <%= link_to bench_path(bench) do %>
 				<%= image_tag "bench placeholder.jpg"%>
-				<div class="card-content">
-					<%= link_to bench.name.capitalize, bench_path(bench)%>
-					<%= bench.location %>
-          <%= link_to 'book', new_bench_booking_path(bench), class: 'btn-outline' %>
+        <%end%>
+        <div class="padding">
+            <%= link_to bench.name.capitalize, bench_path(bench), class: 'link card-link'%>
+          <div class="card-content">
+            <div class="card-text">
+              <p><strong>Location: <br></strong>
+              <%= bench.location %></p>
+              <p><strong>Rating: </strong><%#= bench.rating %></p>
+            </div>
+            <div class="card-links">
+              <%= link_to '+ Book', new_bench_booking_path(bench), class: 'btn-small' %>
+              <%= link_to '> Reviews', bench_path(bench), class: 'btn-small'%>
+            </div>
+				</div>
 				</div>
 			</div>
 
