@@ -25,6 +25,11 @@
  --><!--               <%# counter += 1 %> -->
             <% end %>
           </span>
+          <span><strong>
+          Author:
+          <%= review.user.first_name %>
+          <%= review.user.last_name %>
+          </span></strong>
           <%= review.description %>
         </li>
       <% end %>
