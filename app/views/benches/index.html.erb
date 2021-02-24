@@ -2,15 +2,17 @@
 <h1>All the best benches for the comfort of your butt</h1>
 	<div class="content">
 		<% @benches.each do |bench| %>
+
 			<div class="card">
 				<%= image_tag "bench placeholder.jpg"%>
 				<div class="card-content">
 					<%= link_to bench.name.capitalize, bench_path(bench)%>
 					<%= bench.location %>
-					<%= link_to "book", "#", class:"btn-outline" %>
+          <%= link_to 'book', new_bench_booking_path(bench), class: 'btn-outline' %>
 				</div>
 			</div>
+
 		<% end %>
 	</div>
-	<%= link_to "Create a new bench!", new_bench_path, class: 'btn-outline' %>
+	<%#= link_to "Create a new bench!", new_bench_path, class: 'btn-outline' %>
 </div>
