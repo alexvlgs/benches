@@ -33,5 +33,5 @@ end
 
 puts "creating 10 reviews"
 10.times do
-  Review.create(user: User.all.sample, bench: Bench.all.sample, description: Faker::TvShows::SouthPark.quote, score: rand(1..5))
+  Review.create(user: User.all.sample, bench: Bench.all.sample, description: Faker::TvShows::SouthPark.quote, rating: rand(1..5))
 end
