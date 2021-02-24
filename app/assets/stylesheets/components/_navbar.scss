@@ -33,6 +33,9 @@
   }
   & img {
     height: 1.5rem;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -44,8 +47,19 @@
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.5rem;
-    margin-left: 0.75rem;
+    // margin-left: 0.75rem;
   // &:hover {
   //   border-bottom: 1px solid $action;
   // }
+}
+
+
+#desktop {
+  display: none;
+  @media (min-width: 769px) {
+    display: inline
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
