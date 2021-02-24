@@ -11,6 +11,7 @@
 User.destroy_all
 Bench.destroy_all
 Booking.destroy_all
+Review.destroy_all
 
 puts "creating 10 users"
 
@@ -21,11 +22,16 @@ puts "done"
 
 puts "creating 10 benches"
 10.times do
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, location: Faker::Address.city, score: Faker::Number.within(range: 0..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: Faker::Address.full_address, score: rand(1..5))
 end
 puts "done"
 
 puts "creating 10 bookings"
 10.times do
   Booking.create(user: User.all.sample, bench: Bench.all.sample)
+end
+
+puts "creating 10 reviews"
+10.times do
+  Review.create(user: User.all.sample, bench: Bench.all.sample, description: Faker::TvShows::SouthPark.quote, score: rand(1..5))
 end

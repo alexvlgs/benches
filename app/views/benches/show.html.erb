@@ -1,23 +1,38 @@
 <div class="container">
-<h1> About this bench </h1>
+  <h1> About this bench </h1>
+    <br>
+    <%= image_tag "miradour.jpg", height: 300, width: 300 %>
   <br>
-  <%= image_tag "miradour.jpg", height: 300, width: 300 %>
+  <br>
+  <h3> <%= @bench.name.capitalize %> </h3>
+  <p> Address: <%= @bench.location %> </p>
+  <p> City: <%= @bench.city %> </p>
+  <p> Rating: <%= @bench.score %> </p>
+  <br>
+  <h3>Reviews</h3>
+  <% if @bench.reviews.empty? %>
+    <p>Be the first to let a review</p>
+    <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
 
-
-<h3> <%= @bench.name.capitalize %> </h3>
-<p> bench address </p>
-
-<ul>
-  <% @reviews.each do |review| %>
-    <li>
-        <%= review.rating %>
-        <%= review.description %>
-    </li>
-    <% end %>
-</ul>
-
-    </div>
-
+  <% else %>
+    <ul class="list-group">
+      <% @bench.reviews.each do |review| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span class="badge badge-primary badge-pill">
+            <% counter = 0 %>
+            <% review.rating.to_i.times do %>
+              <i class="fa fa-star"></i>
+<!--               <%#= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+ --><!--               <%# counter += 1 %> -->
+            <% end %>
+          </span>
+          <%= review.description %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <br>
+  <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
 
 </div>
 
