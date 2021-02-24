@@ -31,7 +31,10 @@
     </ul>
   <% end %>
   <br>
+  <div class="action">
   <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
+  <%= link_to 'book', new_bench_booking_path(@bench), class: 'btn-outline' %>
+  </div>
 <br>
 <br>
 <%= link_to "Back to all benches", benches_path, class: "btn-small" %>
