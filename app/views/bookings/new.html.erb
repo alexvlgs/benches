@@ -1,5 +1,6 @@
 
 <div class="container">
-    <h2>Bench: <%=@bench.name%>, location: <%=@bench.location%></h2>
+    <h2>Bench: <span class="text-color"><%=@bench.name.capitalize%></span></h2>
+    <h2>Location: <span class="text-color"><%=@bench.location%></span></h2>
     <%= render 'form' %>
 </div>

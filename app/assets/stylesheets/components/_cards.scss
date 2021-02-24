@@ -7,20 +7,55 @@
 	// width: 400px;
 	margin-bottom: 1rem;
 	&-content {
-		padding: 1rem;
 		display: flex;
-		flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.75rem;
 	}
 
+  & img {
+    width: 100%;
+  }
+
+  &-text {
+    max-width: 50%;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &-link {
+    font-family: $headers-font;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.5rem;;
+    &:hover {
+      color: $action;
+    }
+  }
   @media (min-width: 769px) {
-	width: 25%;
+	width: 30%;
+  margin-bottom: 2rem;
 	}
 }
 .content {
 	display: flex;
 	flex-direction: column;
+  text-align: left;
+  margin-top: 1rem;
   @media (min-width: 769px) {
-		flex-direction: row;
+    margin-top: 2rem;
+    flex-direction: row;
 		flex-wrap: wrap;
+    justify-content: space-evenly;
 	}
+}
+
+.padding {
+  padding: 1.5rem;
+  @media (min-width: 769px) {
+    padding: 2rem;
+  }
 }

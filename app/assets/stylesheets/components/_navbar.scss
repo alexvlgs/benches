@@ -31,6 +31,9 @@
   border-bottom: 1px solid $action;
 
   }
+  & img {
+    height: 1.5rem;
+  }
 }
 
 .link,
@@ -41,6 +44,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.5rem;
+    margin-left: 0.75rem;
   // &:hover {
   //   border-bottom: 1px solid $action;
   // }

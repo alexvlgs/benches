@@ -2,15 +2,15 @@
   <ul>
     <% if user_signed_in? %>
     <li>
-      <%= link_to 'Home', benches_path, class: "link" %>
-        <%#= image_path 'bench.png' %>
-      <%# end %>
+      <%= link_to benches_path do%>
+        <%= image_tag "bench.png" %>
+      <% end %>
     </li>
     <% else %>
     <li>
-      <%= link_to 'Home', root_path, class: "link" %>
-        <%#= image_path 'bench.png' %>
-      <%# end %>
+       <%= link_to root_path do %>
+        <%= image_tag "bench.png" %>
+      <% end %>
     </li>
     <% end %>
 
