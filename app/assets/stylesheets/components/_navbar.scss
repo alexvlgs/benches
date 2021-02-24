@@ -4,7 +4,7 @@
   z-index: 3;
   background-color: $white;
   border-bottom: 1px solid $lightred;
-  width: 100vw; 
+  width: 100vw;
   height: 3.5rem;
   padding: 1rem 10vw;
       &-item {
@@ -47,12 +47,11 @@
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.5rem;
-    // margin-left: 0.75rem;
-  // &:hover {
-  //   border-bottom: 1px solid $action;
-  // }
 }
 
+.link-margin-left {
+    margin-left: 2rem;
+}
 
 #desktop {
   display: none;

@@ -12,8 +12,8 @@
           <div class="card-content">
             <div class="card-text">
               <p><strong>Location: <br></strong>
-              <%= bench.location %></p>
-              <p><strong>Rating: </strong><%#= bench.rating %></p>
+              <%= bench.city %></p>
+              <p><strong>Rating: </strong><%= bench.score %></p>
             </div>
             <div class="card-links">
               <%= link_to '+ Book', new_bench_booking_path(bench), class: 'btn-small' %>

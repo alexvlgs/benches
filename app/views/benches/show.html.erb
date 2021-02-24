@@ -12,7 +12,6 @@
   <h3>Reviews</h3>
   <% if @bench.reviews.empty? %>
     <p>Be the first to let a review</p>
-    <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
 
   <% else %>
     <ul class="list-group">
@@ -33,8 +32,8 @@
   <% end %>
   <br>
   <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
-
+<br>
+<br>
+<%= link_to "Back to all benches", root_path, class: "btn-small" %>
 </div>
-
-  <%= link_to "Back to all benches", root_path %>
 
