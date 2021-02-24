@@ -14,9 +14,9 @@ class BookingsController < ApplicationController
     @booking.bench = @bench
 
     if @booking.save
-      redirect_to bench_path(@bench)
+      redirect_to bench_path(@bench), notice: "Your booking has been succesfull!"
     else
-      redirect_to new_bench_booking_path(@bench)
+      render :new
     end
   end
 
