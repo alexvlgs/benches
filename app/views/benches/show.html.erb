@@ -14,15 +14,15 @@
     <p>Be the first to let a review</p>
 
   <% else %>
+  
     <ul class="list-group">
+    <div class="scroll">
       <% @bench.reviews.each do |review| %>
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <span class="badge badge-primary badge-pill">
             <% counter = 0 %>
             <% review.rating.to_i.times do %>
               <i class="fa fa-star"></i>
-<!--               <%#= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
- --><!--               <%# counter += 1 %> -->
             <% end %>
           </span>
           <span><strong>
@@ -33,6 +33,7 @@
           <%= review.description %>
         </li>
       <% end %>
+    </div>
     </ul>
   <% end %>
   <br>

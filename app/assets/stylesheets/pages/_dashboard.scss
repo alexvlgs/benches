@@ -1,0 +1,33 @@
+.scroll {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  // overflow-x: scroll;
+  // overflow-y: hidden;
+  // white-space: nowrap;
+}
+
+.horizontal {
+  width: 100%;
+  background-color: $lightred;
+  margin-bottom: 2rem;
+}
+
+.booking {
+  width: 110%;
+	border-radius: 1px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	margin: 1rem;
+  background-color: $white;
+  text-align: left;
+  flex: 0 0 auto;
+
+  & img {
+    width: 100%;
+  }
+
+  @media (min-width: 769px) {
+    width: 30%;
+  }
+}
