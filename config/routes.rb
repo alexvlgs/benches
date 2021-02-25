@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # get 'bookings/update'
   # get 'bookings/delete'
   devise_for :users
+  get 'dashboard', to: 'pages#dashboard'
   root to: 'pages#home'
   get 'map', to: 'pages#map'
 	resources :benches do
