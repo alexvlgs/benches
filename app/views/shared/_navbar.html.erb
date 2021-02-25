@@ -20,6 +20,11 @@
     <% if user_signed_in? %>
       <li>
         <%#= link_to "Benches", benches_path, class: 'link link-margin-left' %>
+       <%= link_to 'map_path' do %>
+        <i class="fas fa-map-marked-alt"></i>
+      <% end %>
+      </li>
+      <li>
        <%= link_to dashboard_path do %>
         <i class="fas fa-user"></i>
       <% end %>
@@ -32,3 +37,5 @@
     <% end %>
   </ul>
 </div>
+
+
