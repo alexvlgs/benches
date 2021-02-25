@@ -34,3 +34,31 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+// const btnContainer = document.querySelector('.menu');
+
+// // Get all buttons with class="btn" inside the container
+// const btns = btnContainer.querySelectorAll('.menu a');
+// console.log(btns);
+
+// Loop through the buttons and add the active class to the current/clicked button
+
+// btns.forEach((btn) => {
+//   btn.addEventListener('click', (event) => {
+//     console.log(btn);
+//     console.log(event.currentTarget);
+//     console.log(event);
+//     let current =  document.querySelector('.active');
+//     current.classList.remove('active');
+//     const element = event.currentTarget;
+//     element.classList.add('active');
+//   })
+// })
+
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }

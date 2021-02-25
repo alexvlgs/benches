@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Hello <%=current_user.first_name%></h1> 
+  <h1 class="small-title">Hello <%=current_user.first_name%></h1> 
   <div class="card content">
     <div class="padding">
     <p class="link card-link">Details</p>
@@ -28,7 +28,7 @@
                         <%= b.city %></p>
                     </div>
                       <%= link_to new_bench_review_path(b) , class: 'btn-small' do %>
-                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-comment-medical"></i>
                       <%end%>
                       
                       <%= link_to '#', class: 'btn-small' do %>

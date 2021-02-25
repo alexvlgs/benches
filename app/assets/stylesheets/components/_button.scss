@@ -43,11 +43,20 @@
 .action {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   @media (min-width: 769px) {
     width: 50%;
     margin: 0 auto;
+
+  }
+
+  &-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 30%;
+  // justify-content: space-between;
 
   }
 }
@@ -77,4 +86,11 @@
     font-weight: 400;
     font-size: 1rem;
   }
+}
+
+
+.btn-icon {
+  color: $action;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
