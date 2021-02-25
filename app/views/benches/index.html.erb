@@ -24,7 +24,7 @@
               <%= bench.city %></p>
               <div class="butt">
               <span><strong>Rating: </strong></span><br>
-                <% bench.score.to_i.times do %>
+                <% avg_rating(bench).times do %>
                   <%= image_tag "butt.png"%>
                 <% end %>
               </div>
