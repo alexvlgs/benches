@@ -11,13 +11,14 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= stylesheet_pack_tag 'application' %>
+    <%= favicon_link_tag asset_path 'logo.png' %>
   </head>
 
   <body>
   <%= render 'shared/navbar' %>
     <%= yield %>
     <footer>
-      <h2>- Rent a bench -</h2>
+      <h2 >- Rent a bench -</h2>
       <svg height="3" width="100">
         <line x1="0" y1="0" x2="100" y2="0"/>
       </svg>

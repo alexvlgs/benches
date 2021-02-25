@@ -26,6 +26,10 @@
     margin: 0;
     padding: 0;
   }
+
+  & li {
+    margin: 0;
+  }
   @media (min-width: 769px) {
     background-color: $lightred;
     border-bottom: 1px solid $action;
@@ -53,6 +57,7 @@ i {
     line-height: 1.5rem;
 }
 
+
 .link-margin-left {
     margin-left: 2rem;
 }
@@ -65,4 +70,9 @@ i {
   &:hover {
     text-decoration: none;
   }
+}
+
+
+.active {
+  background-color: blue;
 }
