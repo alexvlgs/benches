@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_bench, only: %i[new create]
-  before_action :set_user, only: %i[new create]
+  before_action :set_bench, only: %i[new create delete]
+  before_action :set_user, only: %i[new create delete]
   def show
   end
 
@@ -41,7 +41,10 @@ class BookingsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, notice: "Your booking was successfully canceled!"
   end
 
   private

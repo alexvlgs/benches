@@ -58,6 +58,9 @@
                         <%= b.ending_date %></p>
                         <p><strong>Address:</strong>
                         <%= b.bench.location %></p>
+                        <%= link_to bench_booking_path(b.bench, b), class: 'btn-small', method: :delete, data: {confirm: 'Do you want to cancel the bookig?'} do %>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end%>
         
                 </div>
             </div>
@@ -71,7 +74,7 @@
 
 
 
-                  <%#= link_to '#', class: 'btn-small' do %>
+                    <%#= link_to '#', class: 'btn-small' do %>
                       <!-- <i class="fas fa-edit"></i>
                       <%#end%>
                       
