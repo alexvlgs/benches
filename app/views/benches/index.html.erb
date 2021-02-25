@@ -1,12 +1,12 @@
 <div class="container">
-<h1>All the best benches for the comfort of your butt</h1>
+<h1> Best benches <br>for best butt comfort</h1>
   <%= form_tag benches_path, class:"search", method: :get do %>
     <%= text_field_tag :query,
      params[:query],
       class: "form-control",
       placeholder: "Find a place!"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Search", class: "btn" , id: 'search' %>
   <% end %>
 
 	<div class="content">

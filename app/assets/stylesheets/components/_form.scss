@@ -21,4 +21,12 @@
 .search input {
   margin: 1rem 0;
   border-radius: 50px;
+
+}
+
+#search {
+  display: none;
+  @media (min-width: 769px) {
+    display: inline-block;
+  }
 }
