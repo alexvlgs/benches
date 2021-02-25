@@ -9,6 +9,10 @@
   <p> City: <%= @bench.city %> </p>
   <p> Rating: <%= @bench.score %> </p>
   <br>
+    <div class="action">
+    <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
+    <%= link_to 'book', new_bench_booking_path(@bench), class: 'btn-outline' %>
+    </div>
   <h3>Reviews</h3>
   <% if @bench.reviews.empty? %>
     <p>Be the first to let a review</p>
@@ -19,10 +23,9 @@
     <div class="scroll">
       <% @bench.reviews.each do |review| %>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span class="badge badge-primary badge-pill">
-            <% counter = 0 %>
+          <span class="badge badge-pill">
             <% review.rating.to_i.times do %>
-              <i class="fa fa-star"></i>
+              <%= image_tag "butt.png", height: 25, width: 25%>
             <% end %>
           </span>
           <span><strong>
@@ -36,11 +39,8 @@
     </div>
     </ul>
   <% end %>
-  <br>
-  <div class="action">
-  <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
-  <%= link_to 'book', new_bench_booking_path(@bench), class: 'btn-outline' %>
-  </div>
+
+
 <br>
 <br>
 <%= link_to "Back to all benches", benches_path, class: "btn-small" %>

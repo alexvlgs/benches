@@ -27,14 +27,18 @@
                         <p><strong>Address: <br></strong>
                         <%= b.city %></p>
                     </div>
-                    <div class="action">
-                      <%= link_to 'Edit', '#', class: 'btn-small' %>
-                      <%= link_to 'Delete', '#', class: 'btn-small'%>
-                    </div>
+                      <%= link_to '#', class: 'btn-small' do %>
+                      <i class="fas fa-edit"></i>
+                      <%end%>
+                      
+                      <%= link_to '#', class: 'btn-small' do %>
+                      <i class="fas fa-trash-alt"></i>
+                      <%end%>
                 </div>
             </div>
           <%end%>
         </div>
+              <p>Wanna add a new bench?</p><p class="btn">Create one</p>
       </div>
     </div>
 
@@ -54,8 +58,7 @@
                         <%= b.ending_date %></p>
                         <p><strong>Address:</strong>
                         <%= b.bench.location %></p>
-                      <%= link_to 'Edit', '#', class: 'btn-small' %><br>
-                      <%= link_to 'Delete', '#', class: 'btn-small'%>
+        
                 </div>
             </div>
           <%end%>
@@ -65,3 +68,13 @@
  
 </div>
 
+
+
+
+                  <%#= link_to '#', class: 'btn-small' do %>
+                      <!-- <i class="fas fa-edit"></i>
+                      <%#end%>
+                      
+                      <%#= link_to '#', class: 'btn-small' do %>
+                    <i class="fas fa-trash-alt"></i>-->
+                      <%#end%>

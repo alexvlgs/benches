@@ -12,6 +12,10 @@
   width: 100%;
   background-color: $lightred;
   margin-bottom: 2rem;
+  @media (min-width: 769px) {
+    background-color: $white;
+
+  }
 }
 
 .booking {

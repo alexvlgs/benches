@@ -26,10 +26,10 @@ puts "creating 10 benches"
 end
 puts "done"
 
-puts "creating 10 bookings"
-10.times do
-  Booking.create(user: User.all.sample, bench: Bench.all.sample)
-end
+# puts "creating 10 bookings"
+# 10.times do
+#   Booking.create(user: User.all.sample, bench: Bench.all.sample, starting_date: Faker::Date.backward, ending_date:Faker::Date.forward)
+# end
 
 puts "creating 10 reviews"
 10.times do

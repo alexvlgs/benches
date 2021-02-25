@@ -4,8 +4,11 @@
 
 
 		<div class="form-inputs">
-			<%= f.input :starting_date, as: :datetime %>
-			<%= f.input :ending_date, as: :datetime %>
+			<%#= f.input :starting_date, as: :datetime %>
+			<%#= f.input :ending_date, as: :datetime %>
+      <%= f.input :starting_date, as: :datetime, html5: true, label: "From" %>
+      <%= f.input :ending_date, as: :datetime, html5: true, label: "To" %>
+      
 		</div>
 
 		<div class="form-actions">
