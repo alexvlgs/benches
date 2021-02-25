@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'dashboard', to: 'pages#dashboard'
   root to: 'pages#home'
+  get 'map', to: 'pages#map'
 	resources :benches do
     resources :bookings, only: %i[new create]
     resources :reviews, only: %i[new create]

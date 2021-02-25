@@ -21,9 +21,15 @@ end
 puts "done"
 
 puts "creating 10 benches"
-10.times do
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: Faker::Address.full_address, score: rand(1..5))
-end
+# 10.times do
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "cascais", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "lisbon", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "paris", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "london", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "carcavelos", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "oeiras", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "rome", score: rand(1..5))
+# end
 puts "done"
 
 # puts "creating 10 bookings"
