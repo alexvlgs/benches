@@ -21,3 +21,11 @@ p {
   font-family: $body-font;
   margin: 0;
 }
+
+
+.small-title {
+  font-size: 1.75rem;
+  @media (min-width: 769px) {
+    font-size: 2rem;
+  }
+}

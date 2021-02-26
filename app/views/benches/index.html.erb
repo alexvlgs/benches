@@ -1,12 +1,12 @@
 <div class="container">
-<h1>All the best benches for the comfort of your butt</h1>
+<h1 class="small-title">All the best benches for your best butt comfort</h1>
   <%= form_tag benches_path, class:"search", method: :get do %>
     <%= text_field_tag :query,
      params[:query],
       class: "form-control",
       placeholder: "Find a place!"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Search", class: "btn" , id: 'search' %>
   <% end %>
 
 	<div class="content">
@@ -22,11 +22,20 @@
             <div class="card-text">
               <p><strong>Location: <br></strong>
               <%= bench.city %></p>
-              <p><strong>Rating: </strong><%= bench.score %></p>
+              <div class="butt">
+              <span><strong>Rating: </strong></span><br>
+                <% bench.score.to_i.times do %>
+                  <%= image_tag "butt.png"%>
+                <% end %>
+              </div>
             </div>
-            <div class="card-links">
-              <%= link_to '+ Book', new_bench_booking_path(bench), class: 'btn-small' %>
-              <%= link_to '> Reviews', bench_path(bench), class: 'btn-small'%>
+            <div class="action-icon">
+              <%= link_to new_bench_booking_path(bench), class: 'btn-icon' do %>
+              <i class="fas fa-calendar-plus"></i>
+              <%end%>
+              <%= link_to new_bench_review_path(bench) , class: 'btn-icon' do %>
+              <i class="fas fa-comment"></i>
+              <%end%>
             </div>
 				</div>
 				</div>

@@ -14,9 +14,9 @@ const initMapbox = () => {
         mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v10',
-            center: [38.69867254868978, -9.422700909603472], // starting position
-            zoom: 12 // starting zoom
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-9.140, 38.730 ], // starting position
+            zoom: 10 // starting zoom
 
 
         });
@@ -41,7 +41,7 @@ const initMapbox = () => {
                 .setPopup(popup)
                 .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
     }
 };
 

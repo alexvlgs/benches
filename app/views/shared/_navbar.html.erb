@@ -20,15 +20,24 @@
     <% if user_signed_in? %>
       <li>
         <%#= link_to "Benches", benches_path, class: 'link link-margin-left' %>
+       <%= link_to map_path do %>
+        <i class="fas fa-map-marked-alt"></i>
+      <% end %>
+      </li>
+      <li >
        <%= link_to dashboard_path do %>
         <i class="fas fa-user"></i>
       <% end %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'link link-margin-left' %>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'link' %>
       </li>
     <% else %>
-      <li class="nav-item">
+      <li>
         <%= link_to "Login", new_user_session_path, class: 'link' %>
       </li>
     <% end %>
   </ul>
 </div>
+
+
