@@ -31,7 +31,11 @@
                       <i class="fas fa-comment-medical"></i>
                       <%end%>
 
-                      <%= link_to '#', class: 'btn-small' do %>
+                      <%= link_to edit_bench_path(b), class: 'btn-small' do %>
+                      <i class="fas fa-edit"></i>
+                      <%end%>
+
+                      <%= link_to bench_path(b), class: 'btn-small', method: :delete, data: {confirm: 'Do you want to delete the bench?'} do %>
                       <i class="fas fa-trash-alt"></i>
                       <%end%>
                 </div>
@@ -39,7 +43,7 @@
           <%end%>
         </div>
               <p>Wanna add a new bench?</p>
-              <%= link_to 'create a new bench', new_bench_path(@bench), class: 'btn' %>
+              <%= link_to 'Add new', new_bench_path(@bench), class: 'btn' %>
 
       </div>
     </div>
@@ -71,7 +75,12 @@
       </div>
     </div>
 
+<div class="action">
+<p>Done with benches?
+<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-small" %></p>
 </div>
+</div>
+
 
 
 

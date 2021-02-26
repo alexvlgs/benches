@@ -2,39 +2,51 @@
   <ul>
     <% if user_signed_in? %>
     <li>
-      <%= link_to benches_path do%>
+    <div class="menu-item">
+      <%= link_to benches_path, class: current_class?(benches_path) do%>
         <%= image_tag "bench.png" %>
         <%# <span class="link" id="desktop">Home</span> %>
+        <p class="nav-text">Benches</p>
       <% end %>
+      </div>
     </li>
     <% else %>
     <li>
-      <%= link_to root_path do%>
+    <div class="menu-item">
+      <%= link_to root_path, class: current_class?(root_path) do%>
         <%= image_tag "bench.png" %>
         <%# <span class="link" id="desktop">Home</span> %>
+        <p class="nav-text">Home</p>
       <% end %>
+      </div>
     </li>
 
     <% end %>
 
     <% if user_signed_in? %>
       <li>
+    <div class="menu-item">
         <%#= link_to "Benches", benches_path, class: 'link link-margin-left' %>
-       <%= link_to map_path do %>
+       <%= link_to map_path, class: current_class?(map_path) do %>
         <i class="fas fa-map-marked-alt"></i>
+        <p class="nav-text">Map</p>
+        
       <% end %>
+      </div>
       </li>
       <li >
-       <%= link_to dashboard_path do %>
+    <div class="menu-item">
+       <%= link_to dashboard_path, class: current_class?(dashboard_path) do %>
         <i class="fas fa-user"></i>
+        <p class="nav-text">Profile</p>
       <% end %>
-      </li>
-      <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'link' %>
-      </li>
+      </div>
+      </li>    
     <% else %>
       <li>
+    <div class="menu-item">
         <%= link_to "Login", new_user_session_path, class: 'link' %>
+        </div>
       </li>
     <% end %>
   </ul>
