@@ -3,7 +3,7 @@ class BenchesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-   @benches = Bench.all.order(created_at: :desc)
+   @benches = Bench.all
    if params[:query].present? 
       sql_query = " \
         benches.name @@ :query \
