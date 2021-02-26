@@ -20,3 +20,14 @@ canvas {
 .mapboxgl-popup-content {
   text-align: left;
 }
+
+.marker {
+  background: url(asset-path('logo.png'));
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  // background-color: blue;
+  // border-radius: 50%;
+  cursor: pointer;
+}

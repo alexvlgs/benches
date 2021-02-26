@@ -7,13 +7,13 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.bench = @bench
     rented = false
-    
+
     bookings_for_bench = Booking.where(bench_id: @booking.bench_id)
     bookings_for_bench.each do |booking|
       starting_date = booking.starting_date

@@ -16,7 +16,7 @@ const initMapbox = () => {
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-9.140, 38.730 ], // starting position
-            zoom: 10 // starting zoom
+            zoom: 12 // starting zoom
 
 
         });
@@ -36,7 +36,9 @@ const initMapbox = () => {
         const markers = JSON.parse(mapElement.dataset.markers);
         markers.forEach((marker) => {
             const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-            new mapboxgl.Marker()
+            const el = document.createElement('div');
+            el.classList.add('marker');
+            new mapboxgl.Marker(el)
                 .setLngLat([marker.lng, marker.lat])
                 .setPopup(popup)
                 .addTo(map);
