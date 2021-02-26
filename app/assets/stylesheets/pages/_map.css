@@ -5,13 +5,14 @@
 }
 
 canvas {
-    
   width: 100vw;
   height: 80vh;
 }
+
 .mapboxgl-canvas-container {
   height: 80vh;
 }
+
 .mapboxgl-popup {
   width: 60%;
   padding: 0.75rem;
@@ -22,7 +23,7 @@ canvas {
 }
 
 .marker {
-  background: url(asset-path('bench.png'));
+  background: url(asset-path("bench.png"));
   background-size: contain;
   background-repeat: no-repeat;
   width: 1.5rem;
