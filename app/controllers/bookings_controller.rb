@@ -1,19 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :set_bench, only: %i[new create]
-  before_action :set_user, only: %i[new create]
+  before_action :set_bench, only: %i[new create delete]
+  before_action :set_user, only: %i[new create delete]
   def show
   end
 
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.bench = @bench
     rented = false
-    
+
     bookings_for_bench = Booking.where(bench_id: @booking.bench_id)
     bookings_for_bench.each do |booking|
       starting_date = booking.starting_date
@@ -41,7 +41,10 @@ class BookingsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, notice: "Your booking was successfully canceled!"
   end
 
   private

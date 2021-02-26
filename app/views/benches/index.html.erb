@@ -14,17 +14,17 @@
 
 			<div class="card">
       <%= link_to bench_path(bench) do %>
-				<%= image_tag "bench placeholder.jpg"%>
+				<%= bench_image_tag(bench)%>
         <%end%>
         <div class="padding">
             <%= link_to bench.name.capitalize, bench_path(bench), class: 'link card-link'%>
           <div class="card-content">
             <div class="card-text">
-              <p><strong>Location: <br></strong>
+              <p><strong>City: <br></strong>
               <%= bench.city %></p>
               <div class="butt">
               <span><strong>Rating: </strong></span><br>
-                <% bench.score.to_i.times do %>
+                <% avg_rating(bench).times do %>
                   <%= image_tag "butt.png"%>
                 <% end %>
               </div>

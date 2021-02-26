@@ -6,23 +6,17 @@
   border-bottom: 1px solid $lightred;
   width: 100vw;
   height: 3.5rem;
-  padding: 1rem 10vw;
-      &-item {
-      color: $action;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-      &:hover {
-        text-decoration: underline;
-        color: $action;
-      }
-    }
+  padding: 0.5rem 12vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   & ul {
+    width: 100%;
     list-style: none;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     margin: 0;
     padding: 0;
   }
@@ -33,7 +27,7 @@
   @media (min-width: 769px) {
     background-color: $lightred;
     border-bottom: 1px solid $action;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   & img {
     height: 1.5rem;
@@ -43,6 +37,9 @@
   }
   & i {
     font-size: 1.5rem;
+  }
+  &-item {
+    text-align: center;
   }
 }
 
@@ -74,5 +71,15 @@ i {
 
 
 .active {
-  background-color: blue;
+  font-weight: 600;
+  background-color: $lightred;
 }
+
+.nav-text {
+  color: $action;
+  margin: 0;
+  line-height: 0.75rem;
+  font-weight: 300;
+  font-size: 0.5rem;
+}
+

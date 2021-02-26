@@ -16,7 +16,7 @@ const initMapbox = () => {
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-9.140, 38.730 ], // starting position
-            zoom: 10 // starting zoom
+            zoom: 13 // starting zoom
 
 
         });
@@ -24,19 +24,31 @@ const initMapbox = () => {
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl
         }));
-        map.addControl(
-            new mapboxgl.GeolocateControl({
-                positionOptions: {
-                enableHighAccuracy: true
-                },
-                trackUserLocation: true
-            })
-        );
+        const geolocate = new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+            fitBoundsOptions: { // OPTIONAL
+              padding: 1, // etc, see https://docs.mapbox.com/mapbox-gl-js/api/#map#fitbounds
+              animate: false, // all AnimateOptions are supported
+              zoom: 12, // all CameraOptions are supported
+            },
+            trackUserLocation: true,
+            showAccuracyCircle: false
+        })
+
+        map.addControl(geolocate);
+        map.on('load', function() {
+        geolocate.trigger();
+        });
+
         map.scrollZoom.disable();
         const markers = JSON.parse(mapElement.dataset.markers);
         markers.forEach((marker) => {
             const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-            new mapboxgl.Marker()
+            const el = document.createElement('div');
+            el.classList.add('marker');
+            new mapboxgl.Marker(el)
                 .setLngLat([marker.lng, marker.lat])
                 .setPopup(popup)
                 .addTo(map);

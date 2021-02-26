@@ -7,10 +7,10 @@
     max-width: 960px;
     margin: 3.5rem auto 0 auto;
     background-color: $white;
+  text-align: center;
     // height: 70vh;
   }
-}
-
-.container {
-  text-align: center;
+  & img {
+    width: 100%;
+  }
 }
