@@ -3,7 +3,20 @@ class BenchesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @benches = Bench.all
+   @benches = Bench.all
+   if params[:query].present? 
+      sql_query = " \
+        benches.name @@ :query \
+        OR benches.location @@ :query \
+        OR benches.city @@ :query \
+      "
+      @benches = Bench.where(sql_query, query: "%#{params[:query]}%")
+    else 
+      @benches = Bench.all
+    end
+    if @benches.empty?
+    flash.now[:alert] = "Sorry, we could not find what you're looking for."
+    end
   end
 
   def show

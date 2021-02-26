@@ -1,0 +1,82 @@
+<div class="container">
+  <h1>Hello <%=current_user.first_name%></h1>
+  <div class="card content">
+    <div class="padding">
+    <p class="link card-link">Details</p>
+
+    <p><strong>First name:</strong> <%=current_user.first_name%></p>
+    <p><strong>Last name: </strong> <%= current_user.last_name%></p>
+    <p><strong>Email:</strong> <%= current_user.email%></p>
+    <%#= link_to 'Change Password', new_user_password_path , class: 'btn-small'%>
+
+    </div>
+  </div>
+
+  <div class="horizontal">
+    <div class="padding">
+      <p class="link card-link">Your Benches</p>
+        <div class="scroll">
+          <% @benches.each do |b|%>
+            <div class="booking">
+              <%= link_to bench_path(b) do %>
+                <%= image_tag "bench placeholder.jpg"%>
+              <%end%>
+                <div class="padding">
+                  <%= link_to b.name.capitalize, bench_path(b), class: 'link card-link'%>
+                    <div class="card-content">
+                        <p><strong>Address: <br></strong>
+                        <%= b.city %></p>
+                    </div>
+                      <%= link_to '#', class: 'btn-small' do %>
+                      <i class="fas fa-edit"></i>
+                      <%end%>
+
+                      <%= link_to '#', class: 'btn-small' do %>
+                      <i class="fas fa-trash-alt"></i>
+                      <%end%>
+                </div>
+            </div>
+          <%end%>
+        </div>
+              <p>Wanna add a new bench?</p>
+              <%= link_to 'create a new bench', new_bench_path(@bench), class: 'btn' %>
+
+      </div>
+    </div>
+
+      <div class="horizontal">
+    <div class="padding">
+      <p class="link card-link">Your Bookings</p>
+        <div class="scroll">
+          <% @bookings.each do |b|%>
+            <div class="booking">
+                <div class="padding">
+
+                        <p><strong>Bench: </strong>
+                        <%= link_to b.bench.name.capitalize, bench_path(b.bench), class: 'btn-small' %></p>
+                        <p><strong>Checkin: </strong>
+                        <%= b.starting_date %></p>
+                        <p><strong>Checkout: </strong>
+                        <%= b.ending_date %></p>
+                        <p><strong>Address:</strong>
+                        <%= b.bench.location %></p>
+
+                </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+                  <%#= link_to '#', class: 'btn-small' do %>
+                      <!-- <i class="fas fa-edit"></i>
+                      <%#end%>
+
+                      <%#= link_to '#', class: 'btn-small' do %>
+                    <i class="fas fa-trash-alt"></i>-->
+                      <%#end%>

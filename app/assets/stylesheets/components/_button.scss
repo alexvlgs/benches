@@ -45,6 +45,11 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @media (min-width: 769px) {
+    width: 50%;
+    margin: 0 auto;
+
+  }
 }
 
 

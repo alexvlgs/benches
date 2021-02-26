@@ -1,5 +1,14 @@
 <div class="container">
 <h1>All the best benches for the comfort of your butt</h1>
+  <%= form_tag benches_path, class:"search", method: :get do %>
+    <%= text_field_tag :query,
+     params[:query],
+      class: "form-control",
+      placeholder: "Find a place!"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
 	<div class="content">
 		<% @benches.each do |bench| %>
 
@@ -22,8 +31,8 @@
 				</div>
 				</div>
 			</div>
-
 		<% end %>
+
 	</div>
 	<%#= link_to "Create a new bench!", new_bench_path, class: 'btn-outline' %>
 </div>

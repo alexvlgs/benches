@@ -8,10 +8,10 @@
 #  lower_case_user = User.create!(first_name: "Peter", last_name: "Griffin", email: "griffin@gmail.com", password: "monkeys123")
 #  lower_case_bench = Bench.create!( name: "buttcomfort", location: "buttland", user: lower_case_user)
 
-User.destroy_all
-Bench.destroy_all
 Booking.destroy_all
 Review.destroy_all
+Bench.destroy_all
+User.destroy_all
 
 puts "creating 10 users"
 
@@ -21,15 +21,21 @@ end
 puts "done"
 
 puts "creating 10 benches"
-10.times do
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: Faker::Address.full_address, score: rand(1..5))
-end
+# 10.times do
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "cascais", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "lisbon", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "paris", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "london", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "carcavelos", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "oeiras", score: rand(1..5))
+  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "rome", score: rand(1..5))
+# end
 puts "done"
 
-puts "creating 10 bookings"
-10.times do
-  Booking.create(user: User.all.sample, bench: Bench.all.sample)
-end
+# puts "creating 10 bookings"
+# 10.times do
+#   Booking.create(user: User.all.sample, bench: Bench.all.sample, starting_date: Faker::Date.backward, ending_date:Faker::Date.forward)
+# end
 
 puts "creating 10 reviews"
 10.times do
