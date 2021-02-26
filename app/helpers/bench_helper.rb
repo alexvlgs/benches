@@ -11,4 +11,13 @@ module BenchHelper
       0
     end
   end
+
+  def bench_image_tag(bench)
+    if bench.photo.attached?
+      cl_image_tag(bench.photo.key)
+    else
+      # cl_image_path('cocktail_placeholder')
+      image_tag('bench placeholder.jpg')
+    end
+  end
 end
