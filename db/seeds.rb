@@ -20,15 +20,29 @@ puts "creating 10 users"
 end
 puts "done"
 
-puts "creating 10 benches"
+puts "creating some benches"
+
+
 # 10.times do
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "cascais", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "lisbon", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "paris", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "london", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "carcavelos", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "oeiras", score: rand(1..5))
-  Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "rome", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "cascais", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "lisbon", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "paris", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "london", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "carcavelos", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "oeiras", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "rome", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Jardim do Torel, Rua Júlio de Andrade, Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Rua do Conde de Redondo 91B, 1150-103 Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Padrão dos Descobrimentos, Av. Brasília, Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Alfama, Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Campo dos Mártires da Pátria, Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Piazza del Colosseo, 1, 00184 Roma RM, Itália", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "00154 Garbatella, Roma, Itália", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Saldanha, Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Santos-o-Velho Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "R. de Santa Cruz do Castelo, 1100-129 Lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Arco da Rua Augusta lisboa", score: rand(1..5))
+Bench.create(name:Faker::Color.color_name, user: User.all.sample, city: Faker::Address.city, location: "Campo de Santa Clara, 1100-471 Lisboa", score: rand(1..5))
 # end
 puts "done"
 
@@ -37,7 +51,7 @@ puts "done"
 #   Booking.create(user: User.all.sample, bench: Bench.all.sample, starting_date: Faker::Date.backward, ending_date:Faker::Date.forward)
 # end
 
-puts "creating 10 reviews"
-10.times do
+puts "creating 50 reviews"
+50.times do
   Review.create(user: User.all.sample, bench: Bench.all.sample, description: Faker::TvShows::SouthPark.quote, rating: rand(1..5))
 end

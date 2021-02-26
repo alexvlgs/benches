@@ -15,6 +15,7 @@ canvas {
 .mapboxgl-popup {
   width: 60%;
   padding: 0.75rem;
+  // z-index: 5;
 }
 
 .mapboxgl-popup-content {
@@ -28,4 +29,16 @@ canvas {
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  // z-index: 3;
+}
+
+input.mapboxgl-ctrl-geocoder--input {
+  z-index: 20;
+}
+
+// input {
+//   z-index: 20;
+// }
+.mapboxgl-user-location-accuracy-circle {
+  background-color: none;
 }

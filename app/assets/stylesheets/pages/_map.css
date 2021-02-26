@@ -30,3 +30,11 @@ canvas {
   height: 1.5rem;
   cursor: pointer;
 }
+
+input.mapboxgl-ctrl-geocoder--input {
+  z-index: 20;
+}
+
+.mapboxgl-user-location-accuracy-circle {
+  background-color: none;
+}

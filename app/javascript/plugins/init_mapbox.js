@@ -28,7 +28,13 @@ const initMapbox = () => {
             positionOptions: {
             enableHighAccuracy: true
             },
-            trackUserLocation: true
+            fitBoundsOptions: { // OPTIONAL
+              padding: 1, // etc, see https://docs.mapbox.com/mapbox-gl-js/api/#map#fitbounds
+              animate: false, // all AnimateOptions are supported
+              zoom: 12, // all CameraOptions are supported
+            },
+            trackUserLocation: true,
+            showAccuracyCircle: false
         })
 
         map.addControl(geolocate);
