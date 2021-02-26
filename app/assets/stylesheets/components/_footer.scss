@@ -1,8 +1,7 @@
 footer {
   width: 100vw;
-  height: 25vh;
   background-color: $lightred;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -10,6 +9,7 @@ footer {
     font-family: $headers-font;
     color: $action;
   }
+
 
   & h2 {
     margin: 0;
@@ -27,11 +27,118 @@ footer {
   // }
 }
 
+div {
+  display: block;
+}
+
 svg {
   stroke: $neutral;
   stroke-width: 3px;
   margin: 1rem auto;
 }
+
+.footer_top {
+  padding: 70px 0;
+  background: #fad0c3;
+}
+
+.containerfooter, .containerfooter--mg, .containerfooter--md, .containerfooter--sm, .containerfooter--xs {
+  max-width: 1240px;
+  margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+  padding: 0 25px;
+    padding-top: 0px;
+    padding-right: 25px;
+    padding-left: 25 px;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.footer__top--img {
+    margin-bottom: 20px;
+}
+
+.footer__top--img img {
+    width: 60px;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer__top--nav {
+    padding-top: 10px;
+}
+
+.footer__top--nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.footer__headline {
+    margin: 0 0 20px;
+    color: #ee3024;
+    font-family: GT Pressura,sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.footer__top--nav ul li {
+    flex-basis: 50%;
+    width: 50%;
+    padding: 5px 10px 5px 0;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.footer__top--nav ul li a {
+    font-family: freight-sans-pro,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .45px;
+    text-transform: uppercase;
+    color: #ee3024;
+    cursor: pointer!important;
+}
+
+.footer__bottom {
+    padding: 30px 0 20px;
+    font-family: GT Pressura,sans-serif;
+    color: #fad0c3;
+    background: #63252a;
+    height: 16rem;
+}
+
+.footer__bottom--nav ul {
+    margin: 0;
+    padding: 20px 0 0;
+    list-style: none;
+}
+
+.footer__bottom--nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer__bottom--nav ul li a {
+    color: #f8f3e4;
+    text-decoration: underline;
+}
+
+
+
 
 // .icons {
 //   margin-top: 1rem;
