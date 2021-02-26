@@ -65,7 +65,7 @@ class BenchesController < ApplicationController
   end
 
   def benches_params
-    params.require(:bench).permit(:name, :location, :city, :score)
+    params.require(:bench).permit(:name, :location, :city, :score, :photo)
   end
 
 end
