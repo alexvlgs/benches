@@ -16,7 +16,7 @@ const initMapbox = () => {
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-9.140, 38.730 ], // starting position
-            zoom: 12 // starting zoom
+            zoom: 13 // starting zoom
 
 
         });
@@ -24,14 +24,18 @@ const initMapbox = () => {
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl
         }));
-        map.addControl(
-            new mapboxgl.GeolocateControl({
-                positionOptions: {
-                enableHighAccuracy: true
-                },
-                trackUserLocation: true
-            })
-        );
+        const geolocate = new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+
+        map.addControl(geolocate);
+        map.on('load', function() {
+        geolocate.trigger();
+        });
+
         map.scrollZoom.disable();
         const markers = JSON.parse(mapElement.dataset.markers);
         markers.forEach((marker) => {
