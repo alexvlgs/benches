@@ -19,7 +19,7 @@
           <% @benches.each do |b|%>
             <div class="booking">
               <%= link_to bench_path(b) do %>
-                <%= image_tag "bench placeholder.jpg"%>
+                <%= bench_image_tag(b) %>
               <%end%>
                 <div class="padding">
                   <%= link_to b.name.capitalize, bench_path(b), class: 'link card-link'%>
