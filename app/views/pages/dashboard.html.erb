@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="small-title">Hello <%=current_user.first_name%></h1> 
+  <h1 class="small-title">Hello <%=current_user.first_name%></h1>
   <div class="card content">
     <div class="padding">
     <p class="link card-link">Details</p>
@@ -10,7 +10,7 @@
     <%#= link_to 'Change Password', new_user_password_path , class: 'btn-small'%>
 
     </div>
-  </div> 
+  </div>
 
   <div class="horizontal">
     <div class="padding">
@@ -30,7 +30,7 @@
                       <%= link_to new_bench_review_path(b) , class: 'btn-small' do %>
                       <i class="fas fa-comment-medical"></i>
                       <%end%>
-                      
+
                       <%= link_to '#', class: 'btn-small' do %>
                       <i class="fas fa-trash-alt"></i>
                       <%end%>
@@ -38,7 +38,9 @@
             </div>
           <%end%>
         </div>
-              <p>Wanna add a new bench?</p><p class="btn">Create one</p>
+              <p>Wanna add a new bench?</p>
+              <%= link_to 'create a new bench', new_bench_path(@bench), class: 'btn' %>
+
       </div>
     </div>
 
@@ -49,7 +51,7 @@
           <% @bookings.each do |b|%>
             <div class="booking">
                 <div class="padding">
-                  
+
                         <p><strong>Bench: </strong>
                         <%= link_to b.bench.name.capitalize, bench_path(b.bench), class: 'btn-small' %></p>
                         <p><strong>Checkin: </strong>
@@ -61,14 +63,14 @@
                         <%= link_to bench_booking_path(b.bench, b), class: 'btn-small', method: :delete, data: {confirm: 'Do you want to cancel the bookig?'} do %>
                           <i class="fas fa-trash-alt"></i>
                         <% end%>
-        
+
                 </div>
             </div>
           <%end%>
         </div>
       </div>
     </div>
- 
+
 </div>
 
 
@@ -77,7 +79,7 @@
                     <%#= link_to '#', class: 'btn-small' do %>
                       <!-- <i class="fas fa-edit"></i>
                       <%#end%>
-                      
+
                       <%#= link_to '#', class: 'btn-small' do %>
                     <i class="fas fa-trash-alt"></i>-->
                       <%#end%>

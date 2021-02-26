@@ -31,6 +31,7 @@ class BenchesController < ApplicationController
 
   def create
     @bench = Bench.new(benches_params)
+    @bench.user = current_user
     if @bench.save
       redirect_to bench_path(@bench)
     else
@@ -39,17 +40,23 @@ class BenchesController < ApplicationController
   end
 
   def edit
+    @bench = Bench.find(params[:id])
   end
 
   def update
+    # @bench.update(benches_params)
+    # redirect_to bench_path(@bench)
+    @bench = Bench.find(params[:id])
     @bench.update(benches_params)
     redirect_to bench_path(@bench)
   end
 
   def destroy
+    @bench = Bench.find(params[:id])
+    @bench.user = current_user
     @bench.destroy
-    redirect_to bench_path
-  end
+    redirect_to benches_path
+    end
 
   private
 
@@ -60,4 +67,5 @@ class BenchesController < ApplicationController
   def benches_params
     params.require(:bench).permit(:name, :location, :city, :score)
   end
+
 end

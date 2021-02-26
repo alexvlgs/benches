@@ -16,7 +16,6 @@
     Be the first.</p>
 
   <% else %>
-  
   <div class="horizontal">
     <div class="padding">
 
@@ -45,6 +44,16 @@
 
   <% end %>
 
+  <br>
+  <%= link_to 'review', new_bench_review_path(@bench), class: 'btn' %>
+  <% if @bench.user == current_user  %>
+  <%= link_to 'edit', edit_bench_path(@bench), class: 'btn' %>
+ <%= link_to "delete",
+              bench_path(@bench),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: 'btn' %>
+  <% end %>
 
 
   <div class="action">
@@ -55,5 +64,3 @@
 <br>
 <%= link_to "Back to all benches", benches_path, class: "btn-small" %>
 </div>
-
-
